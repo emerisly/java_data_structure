@@ -1,0 +1,92 @@
+.package stretch;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class stretch {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new FileReader("stretchi.txt"));
+	    PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter("stretcho.txt")));
+		StringTokenizer str=new StringTokenizer(br.readLine());
+		int row=Integer.parseInt(str.nextToken());
+		int col=Integer.parseInt(str.nextToken());
+		int start=Integer.parseInt(str.nextToken());
+		int num=Integer.parseInt(str.nextToken());
+		int[] arr=new int[num];
+		for(int i=0;i<num;i++) {
+			arr[i]=Integer.parseInt(str.nextToken());
+		}
+		
+		//A-[r0][c3]
+		//B-[r3][c1]
+		//C-[r2][c2]
+		//D-[r3][c2]
+		//E-[r2][c3]
+		
+		//r-(plus1)
+		//c-(pluscol)
+		
+		String ans="";
+		
+		
+		
+
+	}
+	
+	public static boolean checkBlock(int start,char ch,int col,int row,int[] arr) {
+		boolean flag=true;
+		int end=canMoveTo(start,ch,col,row,arr);
+		//check blocked
+		for(int i=0;i<arr.length;i++) {
+			if(end==arr[i]) {
+				flag=false;
+				break;
+			}
+		}
+		
+		
+		
+		return flag;
+	}
+	
+	
+	public static int canMoveTo(int start,char ch,int col,int row,int[] arr) {
+		int end=start;
+		boolean flag=true;
+		while(flag) {
+		switch(ch) {
+		case 'A':
+			if(start<2*col||start>(row-2)*col)
+				flag=false;
+			end+=3*col;
+			break;
+		case 'B':
+			if(start%col>col-3||start<=2*col||start>(row-2)*col)
+				flag=false;
+			end+=3+3*col;
+			break;
+		case 'C':
+			if()
+			end+=2+2*col;
+			break;
+		case 'D':
+			end+=3+2*col;
+			break;
+		case 'E':
+			end+=2+3*col;
+			break;
+		}
+		}
+		
+		return end;
+	}
+
+}

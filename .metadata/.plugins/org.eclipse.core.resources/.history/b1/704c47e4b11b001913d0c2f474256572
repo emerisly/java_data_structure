@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+public class mountains {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arrx=new int[10];
+		int[] arry=new int[10];
+		arrx[0]=1;
+		arrx[1]=5;
+		arrx[2]=2;
+		Arrays.sort(arrx);
+		System.out.println(Arrays.toString(arrx));
+	}
+
+}

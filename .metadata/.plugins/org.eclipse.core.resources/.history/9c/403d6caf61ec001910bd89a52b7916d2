@@ -1,0 +1,97 @@
+package LinkedlistProject;
+
+public class LinkedListDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		LinkedList1<String> list1=new LinkedList1<String>();
+		list1.add("Monday");
+		list1.add("Tuesday");
+		list1.add("Wednesday");
+		list1.print();
+		System.out.println();
+		list1.addFirst("Sunday");
+		list1.add(3,"index3");
+		list1.print();
+		System.out.println();
+		list1.set(0, "first");
+		list1.print();
+		System.out.println();
+		list1.printRecursiveFoward();
+		System.out.println();
+		list1.printRecursiveBackward();
+		*/
+LinkedList1<String> list=new
+LinkedList1<String>();
+list.add( "Missouri");
+list.add("New Jersey");
+list.add("New York");
+list.add( "California" ) ;
+list.add( "Montanna" ) ;
+list.add( "Nevada" ) ;
+list.add( "Florida");
+System.out.println("*** Testing add(obj)***\n"+list);
+list.addFirst( "Washington" ) ;
+list.addFirst( "Maryland" ) ;
+list.addFirst ( "Delaware");
+list.addFirst("Rhode Island");
+System.out.println("*** Testing the addFirst(obj)***\n"+list);
+System.out.println("*** Testing get(i) and size() **** \n");
+for(int i=0; i<list.size();i++)
+	System.out.println(list.get(i));
+
+System.out.println("***************");
+System.out.println("***\n**********");
+System.out.println("***\nPrintforwardusingrecursion*******");
+list.printRecursiveForward();
+System.out.println("\n****Print using toString\n"+list);
+System.out.println("\n********In Reverse ******");
+list.printRecursiveBackward();
+System.out.println("\n****Printing out the list as we remove each element from the front");
+while(list.size()>0)
+System.out.printIn(list.remove());
+System.out.println("\n******Starting the insert *******");
+list.addFirst("Belmar");
+list.add(0,"LongBranch");
+list.add(0,"AsburyPark");
+list.add(0,"RedBank");
+list.add("Old Bridge");
+list.add(2,"Newark");
+list.add(4,"Sayreville");
+list.add(list.size(),"PointPleasant");
+list.add(6,"Freehold");
+
+
+list.printRecursiveForward( ) ;
+System.out.println("\n****** Starting remove(i)****");
+try{
+System.out.println (list.remove (list.size( )));
+}
+catch(IndexOutOfBoundsException e)
+{System.out.println(e);}
+System.out.println(list .remove( list.size ( ) - 1));
+System.out.println(list .remove(0) ) ;
+System.out.println(list .remove(2) ) ;
+System.out.println(list .remove(4) ) ;
+System.out.println(list .remove(1) ) ;
+System.out.println("******* Testing Set **********\n"+list);
+list.set(0, "Namath");
+list.set(3, "Sauer");
+list .set (list.size() -1, "Maynard") ;
+try{
+list.set(list.size(),"Namath");
+}
+catch(IndexOutOfBoundsException e) {
+	System.out.println(e);
+	list.printRecursiveForward();
+	System.out.println("Testing toString");
+	System.out.println(list);
+}
+
+
+
+
+
+	}
+}

@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class mountains {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> arrx=new ArrayList<>();
+		ArrayList<Integer> arry=new ArrayList<>();
+		arrx.add(1);
+		arrx.add(3);
+		arrx.add(2);
+		Collections.sort(arrx);
+		System.out.println(arrx);
+	}
+
+}

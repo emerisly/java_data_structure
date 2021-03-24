@@ -1,0 +1,121 @@
+package LinkedlistProject;
+
+public class LinkedList1<Type> {
+	private ListNode<Type> first;
+	private int size=0;
+	
+	public void printRecursiveForward() {
+		if(first!=null)
+			printRecursiveHelperForward(first);
+		else
+			System.out.println("List is Empty");
+	}
+	private void printRecursiveHelperForward(ListNode <Type> current) {
+		if(current!=null) {
+			System.out.println(current.getValue());
+			printRecursiveHelperForward(current.getNext());
+		}
+	}
+	
+	public void printRecursiveBackward() {
+		if(first!=null)
+			printRecursiveHelperBackward(first);
+		else
+			System.out.println("List is Empty");
+	}
+	private void printRecursiveHelperBackward(ListNode <Type> current) {
+		if(current!=null) {
+			printRecursiveHelperBackward(current.getNext());
+			System.out.println(current.getValue());
+		}
+	}
+	
+	public boolean add(Type obj) {
+		ListNode<Type> newNode=new ListNode<Type>(obj,null);
+		ListNode<Type> current;
+		if(first==null)
+			first=newNode;
+		else {
+			current=first;
+			while(current.getNext()!=null)
+				current=current.getNext();
+			current.setNext(newNode);
+			size++;
+		}
+		return true;
+	}
+	public void add(int index,Type obj) {
+		ListNode<Type> newNode=new ListNode<Type>(obj,null);
+		if(index<0||index>size)
+			throw new IndexOutOfBoundsException("Index out of bound");
+		if(index==0)
+			addFirst(obj);
+		else {
+			int i=0;
+			ListNode<Type> current=first;
+			ListNode<Type> previous=first;
+			while(i<index) {
+				previous=current;
+				current=current.getNext();
+				i++;
+			}
+			previous.setNext(newNode);
+			newNode.setNext(current);
+			size++;
+		}
+	}
+	public void addFirst(Type obj) {
+		ListNode<Type> newNode=new ListNode<Type>(obj,null);
+		if(first==null)
+			first=newNode;
+		else {
+			newNode.setNext(first);
+			first=newNode;
+		}
+		size++;
+	}
+
+	public void set(int index,Type obj) {
+		ListNode<Type> newNode=new ListNode<Type>(obj,null);
+		ListNode<Type> current=first;
+		ListNode<Type> next=first;
+		int i=0;
+		while(i<index) {
+			current=current.getNext();
+			next=current.getNext();
+			i++;
+		}
+		current=newNode;
+		current.setNext(next);
+	}
+	
+	public void print() {
+		ListNode<Type>current=first;
+		if(current==null)
+			System.out.println("list is empty");
+		else {
+			while(current!=null) {
+				System.out.println(current.getValue());
+				current=current.getNext();
+			}
+		}
+	}
+	public ListNode<Type> remove(int index) {
+		ListNode<Type>current=first;
+		for(int i=0;i<index;i++) {
+			current=current.getNext();
+		}
+		size--;
+		return first;
+	}
+	public int size() {
+		return size;
+	}
+	public String get(int index){
+		ListNode<Type>current=first;
+		for(int i=0;i<index;i++) {
+			current=current.getNext();
+		}
+		return current.toString();
+	}
+}

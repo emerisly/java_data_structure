@@ -1,0 +1,143 @@
+package stretch;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class stretch {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new FileReader("stretchi.txt"));
+	    PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter("stretcho.txt")));
+		StringTokenizer str=new StringTokenizer(br.readLine());
+		int row=Integer.parseInt(str.nextToken());
+		int col=Integer.parseInt(str.nextToken());
+		int start=Integer.parseInt(str.nextToken());
+		int num=Integer.parseInt(str.nextToken());
+		int[] arr=new int[num];
+		for(int i=0;i<num;i++) {
+			arr[i]=Integer.parseInt(str.nextToken());
+		}
+		char[] check= {'A','B','C','D','E','A','B','C','D','E','A','B','C','D','E',
+				'A','B','C','D','E','A','B','C','D','E','A','B','C','D','E',
+				'A','B','C','D','E','A','B','C','D','E'};
+		
+		for(int i=0;i<check.length;i++) {
+			System.out.print(check[i]+" ");
+		}
+		System.out.println();
+		System.out.println(row+" "+col+" "+start+" "+num);
+		//A-[r0][c3]
+		//B-[r3][c1]
+		//C-[r2][c2]
+		//D-[r3][c2]
+		//E-[r2][c3]
+		
+		String[] ans= {""};
+		answer(ans,start,check,col,row,arr,0);
+		System.out.println(ans[0]);
+		
+		checkBorder(start,check[0],col,row,arr);
+		
+		
+		
+		
+		
+
+	}
+	
+	
+	//get answer
+	public static void answer(String[] ans,int start, char[] check,int col,int row,int[] arr,int i) {
+		int end=checkPlace(start,check[i],col,row,arr);
+		System.out.println(end);
+		while(ifContinue(end,col)) {
+		if(end==-1) {
+			System.out.println(end);
+			end=checkPlace(start,check[i+1],col,row,arr);
+		}
+		else {
+			System.out.println("CHAR");
+			ans[0]+=check[i];
+		}
+		}
+	}
+
+	//check if the task is done
+	public static boolean ifContinue (int end,int col) {
+		if(end%col==0) {
+			System.out.println("continue");
+			return false;
+		}
+		System.out.println("stop");
+		return true;
+	}
+	
+	//check if is inside the border and does not meet the block
+	//return end
+	public static int checkPlace(int start,char ch,int col,int row,int[] arr) {
+		boolean flag=true;
+		int end=checkBorder(start,ch,col,row,arr);
+		//check blocked
+		for(int i=0;i<arr.length;i++) {
+			if(end==arr[i]) {
+				flag=false;
+				break;
+			}
+		}
+		if(!flag)
+			end=-1;
+		System.out.println(end);
+		return end;
+	}
+	
+	//check if fit inside the border
+	public static int checkBorder(int start,char ch,int col,int row,int[] arr) {
+		int end=start;
+		System.out.println(end);
+		System.out.println(ch);
+		boolean flag=true;
+		while(flag) {
+		switch(ch) {
+		case 'A':
+			if(start<col-2)
+				flag=false;
+			end+=3*col;
+			break;
+		case 'B':
+			if(start<col||(start<=2*col||start>(row-2)*col))
+				flag=false;
+			end+=3+3*col;
+			break;
+		case 'C':
+			if(start<col-1||(start<=1*col||start>(row-1)*col))
+				flag=false;
+			end+=2+2*col;
+			break;
+		case 'D':
+			if(start<col-1||(start<=2*col||start>(row-2)*col))
+				flag=false;
+			end+=3+2*col;
+			break;
+		case 'E':
+			if(start<col-2||(start<=1*col||start>(row-1)*col))
+				flag=false;
+			end+=2+3*col;
+			break;
+		}
+		
+	}
+		if(!flag) {
+			end=-1;
+		}
+		System.out.println(end);
+		return end;
+
+}
+}

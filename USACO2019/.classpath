@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src1"/>
+	<classpathentry kind="src" path="2019_12_B"/>
+	<classpathentry kind="src" path="2019_12_S"/>
+	<classpathentry kind="src" path="2019_1_S"/>
+	<classpathentry kind="src" path="2019_1_G"/>
+	<classpathentry kind="src" path="2019_4_G"/>
+	<classpathentry kind="src" path="src2"/>
+	<classpathentry kind="src" path="src3"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

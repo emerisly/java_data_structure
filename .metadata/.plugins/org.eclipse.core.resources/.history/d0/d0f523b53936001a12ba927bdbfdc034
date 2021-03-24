@@ -1,0 +1,46 @@
+package acsl;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+public class acsl {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new FileReader("contest1.txt"));
+		for(int a=0;a<5;a++) {
+		StringTokenizer s=new StringTokenizer(br.readLine());
+        String str=s.nextToken();
+        long num=Long.parseLong(str);
+        int[] nums=new int[str.length()];
+        for(int i=0;i<nums.length;i++){
+            nums[i]=Integer.parseInt(""+str.charAt(i));
+        }
+        int n=Integer.parseInt(s.nextToken());
+        int p=nums.length-n;
+        for(int i=0;i<nums.length;i++){
+            if(i<p)
+                nums[i]+=nums[p];
+            if(i>p)
+                nums[i]=Math.abs(nums[i]-nums[p]);
+        }
+        nums[p]=f(num);
+        for(int i= 0;i<nums.length;i++)
+            System.out.print(nums[i]);
+        System.out.println();
+		}
+    }
+   
+    public static int f(long num){
+        int sq=(int)Math.sqrt(num);
+        int counter=0;
+        for(int i=2;i<sq;i++){
+            if(num%i==0) counter++;
+            while(num%i==0) num/=i;
+        }
+        return counter;
+    }
+}

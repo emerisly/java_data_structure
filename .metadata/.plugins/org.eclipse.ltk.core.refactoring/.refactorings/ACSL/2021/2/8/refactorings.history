@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;problem7.txt, problem7out.txt&apos; to &apos;ACSL&apos;" description="Move 2 resources to &apos;ACSL&apos;" destination="/ACSL" element1="/CSA/problem7.txt" element2="/CSA/problem7out.txt" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1613441217706" updateReferences="true"/>
+</session>

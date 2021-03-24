@@ -1,0 +1,12 @@
+package Unit7_Arrays;
+
+public class InitializeInt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		n++;
+		System.out.println(n);
+	}
+
+}
