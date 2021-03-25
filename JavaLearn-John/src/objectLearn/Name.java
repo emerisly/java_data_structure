@@ -1,12 +1,12 @@
 package objectLearn;
 
 public class Name {
-	String firstName;
-	String lastName;
+	String bookTitle;
+	String author;
 	
-	public Name(String fn, String ln) {
-		this.firstName=fn;
-		this.lastName=ln;
+	public Name(String bt, String au) {
+		bookTitle=bt;
+		author=au;
 	}
 	
 	public Name() {
@@ -15,11 +15,11 @@ public class Name {
 	
 	//getter+setter
 	public String getFirstName() {
-		return firstName;
+		return bookTitle;
 	}
 	
 	public String toString() {
-		return firstName+" "+lastName;
+		return bookTitle+" "+author;
 	}
 	
 }

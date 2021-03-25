@@ -6,13 +6,13 @@ public class Section {
 	
 	
 	private Teacher teacher;
-	private Student[] student;
+	private Undergrates[] student;
 	int room;
 	int period;
 	
 	
 	//constructor
-	public Section(Teacher t,Student[] s,int r,int p) {
+	public Section(Teacher t,Undergrates[] s,int r,int p) {
 		teacher=t;
 		student=s;
 		room=r;
@@ -54,15 +54,15 @@ public class Section {
 		return str;
 	}
 	
-	public Student[] getStudent() {
+	public Undergrates[] getStudent() {
 		return student;
 	}
 	
-	public void setStudent(Student[] s) {
+	public void setStudent(Undergrates[] s) {
 		student=s;
 	}
 	
-	public void setOneStudent(int index, Student s) {
+	public void setOneStudent(int index, Undergrates s) {
 		student[index]=s;
 	}
 	

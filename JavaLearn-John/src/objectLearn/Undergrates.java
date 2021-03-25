@@ -1,6 +1,6 @@
 package objectLearn;
 
-public class Student {
+public class Undergrates {
 	//we are creating a type of object that is studnet
 	
 	//fields
@@ -11,7 +11,7 @@ public class Student {
 	
 	
 	//over-loading constructor
-	public Student(){
+	public Undergrates(){
 		/*
 		name="default";
 		gpa=0.0;
@@ -21,7 +21,7 @@ public class Student {
 		this(null,0.0,"N/A",0);
 	}
 	
-	public Student(Name n, double gp, String ge, int a) {
+	public Undergrates(Name n, double gp, String ge, int a) {
 		name=n;
 		gpa=gp;
 		gender=ge;
@@ -39,7 +39,7 @@ public class Student {
 	}
 	
 	public String printName() {
-		return this.name.firstName+" "+this.name.lastName;
+		return this.name.bookTitle+" "+this.name.author;
 	}
 	
 	

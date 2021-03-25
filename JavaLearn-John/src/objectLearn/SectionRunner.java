@@ -14,12 +14,12 @@ public class SectionRunner {
 		System.out.println(worldHistory1.printTeacher());
 		
 		//create students
-		Student[] studentGroup1 = new Student[2];
+		Undergrates[] studentGroup1 = new Undergrates[2];
 		Name name1 = new Name("Tom","StudentCo");
-		Student stu1 = new Student(name1,3.5,"male",14);
+		Undergrates stu1 = new Undergrates(name1,3.5,"male",14);
 		studentGroup1[0]=stu1;
 		Name name2 = new Name("Tom2","StudentCo2");
-		Student stu2 = new Student(name2,3.6,"male",14);
+		Undergrates stu2 = new Undergrates(name2,3.6,"male",14);
 		studentGroup1[1]=stu2;
 		
 		

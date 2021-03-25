@@ -5,7 +5,7 @@ public class StudentRunner {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//tyep name = new type()
-		Student stu1 = new Student();
+		Undergrates stu1 = new Undergrates();
 		Name name1 = new Name("John","Li");
 		//stu1.name="John";
 		stu1.setName(name1);
@@ -21,20 +21,25 @@ public class StudentRunner {
 		System.out.println();
 		//Student stu3 = new Student("Gabby",3.0,"female",16);
 		//System.out.println(stu3);
-		Student stu4 = new Student();
+		Undergrates stu4 = new Undergrates();
 		System.out.println(stu4);
 		System.out.println();
 		
-		Student stu2 = new Student();
+		Undergrates stu2 = new Undergrates();
 		System.out.println(stu1);
 		System.out.println(stu2);
 		
 		System.out.println("***"+stu1.toString());
 		
 		
-		Student stu5 = new Student();
+		Undergrates stu5 = new Undergrates();
 		//stu5.setGpa(-1);
 		System.out.println(stu5.getGpa());
+		
+		Undergrates[] studentGroup = new Undergrates[3];
+		studentGroup[0]=stu1;
+		studentGroup[1]=stu2;
+		studentGroup[2]=stu4;
 		
 		
 		System.out.println("Name is "+stu1.getName().getFirstName());
@@ -42,7 +47,7 @@ public class StudentRunner {
 		
 		
 		
-		Student stu6 = new Student();
+		Undergrates stu6 = new Undergrates();
 		System.out.println("Name is "+stu6.getName().getFirstName());
 
 	}
